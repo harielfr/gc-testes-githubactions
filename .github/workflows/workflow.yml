@@ -1,4 +1,4 @@
-name: Primeiro Workflow Automático
+name: Workflow Automático
 
 on:
   push:
@@ -15,13 +15,10 @@ jobs:
       - name: Configurar Ambiente Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20' 
-
-      - name: Instalar Dependências (Opcional, mas comum)
-        run: npm install
+          node-version: '20'
 
       - name: Listar Arquivos do Projeto
         run: ls -la
 
       - name: Imprimir Mensagem de Sucesso
-        run: echo "✅ Pipeline executada com sucesso!"
+        run: echo "Pipeline executada com sucesso!"
