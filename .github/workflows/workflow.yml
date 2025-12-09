@@ -1,0 +1,27 @@
+name: Primeiro Workflow Automático
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  construir-e-testar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Ambiente Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' 
+
+      - name: Instalar Dependências (Opcional, mas comum)
+        run: npm install
+
+      - name: Listar Arquivos do Projeto
+        run: ls -la
+
+      - name: Imprimir Mensagem de Sucesso
+        run: echo "✅ Pipeline executada com sucesso!"
